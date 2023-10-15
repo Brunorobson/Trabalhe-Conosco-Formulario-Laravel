@@ -21,7 +21,7 @@ return new class extends Migration
             $table->char('experiência')->default('A'); //QUAL A SUA EXPERIÊNCIA GERAL NA ÁREA TECH?
             $table->char('momento_profissional', 2)->default('AA'); //COMO ESTA SEU MOMENTO PROFISSIONAL?
             $table->string('cidade_residencia');
-            $table->textarea('sobre');
+            $table->text('sobre');
             $table->timestamps();
         });
     }
