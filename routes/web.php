@@ -23,5 +23,3 @@ Route::get('/', function () {
 // Route::get('/', [TrabalheConoscoController::class, 'index'])->name('trabalhe.index');
 Route::post('/novo', [TrabalheConoscoController::class, 'store'])->name('trabalhe.store');
 
-Route::post('emails', [SendmailController::class, 'store'])->name('email.store');
-
