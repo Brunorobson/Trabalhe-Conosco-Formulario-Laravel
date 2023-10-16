@@ -11,11 +11,18 @@ class SendmailController extends Controller
 {
     public function store(Request $request){
 
+        $disponibilidadeMensagens = [
+            'A' => 'Busco oportunidades para iniciar o trabalho imediatamente',
+            'B' => 'Estou empregado mas busco novos desafios',
+            'C' => 'Não procuro emprego ativamente, mas estou aberto a avaliar novas oportunidades',
+            'D' => 'Não estou aberto a novas oportunidades',
+        ];
+
         $nome = $request->nome;
         $email = $request->email;
         $telefone = $request->telefone;
-        // $carreira = $request->carreira;
-        $disponibilidade = $request->disponibilidade;
+        $carreira = implode(', ', $request->carreira);
+        $disponibilidade = $disponibilidadeMensagens[$request->disponibilidade] ?? 'Opção inválida';
         $experiencia = $request->experiencia;
         $habilidades = $request->habilidades;
         $sobre = $request->sobre;
@@ -24,7 +31,7 @@ class SendmailController extends Controller
             'nome' => $nome,
             'email' => $email,
             'telefone' => $telefone,
-            // 'carreira' => $carreira,
+            'carreira' => $carreira,
             'disponibilidade' => $disponibilidade,
             'experiencia' => $experiencia,
             'habilidades' => $habilidades,

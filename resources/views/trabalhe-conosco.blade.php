@@ -20,23 +20,17 @@
                 @csrf
                 <div class="mb-4">
                     <label for="nome" class="block mb-2 text-sm text-gray-600">Nome Completo</label>
-                    <input type="text" id="nome" name="nome"
-                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                        required>
+                    <input type="text" id="nome" name="nome" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
                 </div>
 
                 <div class="mb-4 flex">
                     <div class="w-1/2 mr-2">
                         <label for="email" class="block mb-2 text-sm text-gray-600">E-mail</label>
-                        <input type="text" id="email" name="email"
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                            required>
+                        <input type="text" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
                     </div>
                     <div class="w-1/2 ml-2">
                         <label for="telefone" class="block mb-2 text-sm text-gray-600">Telefone</label>
-                        <input type="text" id="telefone" name="telefone"
-                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                            required>
+                        <input type="text" id="telefone" name="telefone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
                     </div>
                 </div>
 
@@ -60,25 +54,23 @@
                             "UI/UX" => "UI",
                         ];
                         ?>
-                            @foreach ($carreiras as $carreira => $sigla)
-                                <label>
-                                    <input type="checkbox" name="carreira[]" value="{{ $sigla }}" class="mr-2"> {{ $carreira }}
-                                </label>
-                            @endforeach
+                        @foreach ($carreiras as $carreira => $sigla)
+                        <label>
+                            <input type="checkbox" name="carreira[]" value="{{ $carreira }}" class="mr-2 career-checkbox"> {{ $carreira }}
+                        </label>
+                        @endforeach
                     </div>
                 </div>
 
                 <div class="mb-4">
                     <label for="text" class="block mb-2 text-sm text-gray-600">Indique suas habilidades</label>
-                    <textarea type="habilidades" id="habilidades" name="habilidades" placeholder="JavaScript, Python, Java, C++, etc"
-                        required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+                    <textarea type="habilidades" id="habilidades" name="habilidades" placeholder="JavaScript, Python, Java, C++, etc" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
                 </div>
 
                 <div class="mb-6">
                     <label for="disponibilidade" class="block mb-2 text-sm text-gray-600">Qual é a sua disponibilidade?
                         *</label>
-                    <select id="disponibilidade" name="disponibilidade"
-                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 bg-white">
+                    <select id="disponibilidade" name="disponibilidade" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 bg-white">
                         <option value="" disabled="" label="Defina seu momento"></option>
                         <option value="A">Busco oportunidades para iniciar o trabalho imediatamente</option>
                         <option value="B">Estou empregado mas busco novos desafios</option>
@@ -92,24 +84,38 @@
                 <div class="mb-6">
                     <label for="experiência" class="block mb-2 text-sm text-gray-600">Quanto tempo de experiência você
                         possui na área?</label>
-                    <textarea type="experiencia" id="experiencia" name="experiencia" placeholder="Quero Começar, entre 1 e 2 anos..."
-                        required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+                    <textarea type="experiencia" id="experiencia" name="experiencia" placeholder="Quero Começar, entre 1 e 2 anos..." required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
                 </div>
 
                 <div class="mb-6">
                     <label for="sobre" class="block mb-2 text-sm text-gray-600">Fale sobre você:</label>
-                    <textarea type="sobre" id="sobre" name="sobre" placeholder="Digite seu texto aqui...." required
-                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+                    <textarea type="sobre" id="sobre" name="sobre" placeholder="Digite seu texto aqui...." required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
                 </div>
 
-                <button type="submit"
-                    class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                <button type="submit" class="block mx-auto w-48 px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-purple">
                     Enviar
                 </button>
+
             </form>
             <p class="text-xs text-gray-600 text-center mt-8">&copy; 2023 AppMake</p>
         </div>
     </div>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    var maxChecked = 3;
+
+    $('.career-checkbox').change(function() {
+        var checked = $('.career-checkbox:checked').length;
+
+        if (checked > maxChecked) {
+            $(this).prop('checked', false);
+        }
+    });
+});
+</script>
+
 
 </html>

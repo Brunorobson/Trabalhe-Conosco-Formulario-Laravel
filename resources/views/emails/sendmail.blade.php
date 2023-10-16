@@ -2,7 +2,7 @@
 # Mensagem de {{$data['nome']}}
 
 <p> Telefone: <strong>{{ $data['telefone'] }}</strong></p>
-{{-- <p> Carreira: <strong>{{ $data['carreira'] }}</strong></p> --}}
+<p> Carreira: <strong>{{ $data['carreira'] }}</strong></p>
 <p> Disponibilidade: <strong>{{ $data['disponibilidade'] }}</strong></p>
 <p> Experiência: <strong>{{ $data['experiencia'] }}</strong></p>
 <p> Habilidades: <strong>{{ $data['habilidades'] }}</strong></p>
