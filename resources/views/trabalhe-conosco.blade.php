@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="mb-4">
-                    <label class="block mb-2 text-sm text-gray-600">Quais carreiras você está buscando? (Selecione até 3 opções)</label>
+                    <label class="block mb-2 text-sm text-gray-600">Quais carreiras você está buscando?</label>
                     <div class="grid grid-cols-4 gap-3">
                         <?php
                         // Mapeamento entre carreiras e siglas
@@ -70,14 +70,6 @@
                             "Front-End Developer" => "FE",
                             "FullStack Developer" => "FS",
                             "Mobile Developer" => "MD",
-                            "DevOps" => "DO",
-                            "Data Scientist" => "DS",
-                            "QA / Testes" => "QA",
-                            "DBA ou BI" => "DB",
-                            "CTO" => "CTO",
-                            "Product Owner" => "PO",
-                            "Product Manager" => "PM",
-                            "UI/UX" => "UI",
                         ];
                         ?>
                         @foreach ($carreiras as $carreira => $sigla)
@@ -90,7 +82,7 @@
 
                 <div class="mb-4">
                     <label for="text" class="block mb-2 text-sm text-gray-600">Indique suas habilidades</label>
-                    <textarea type="habilidades" id="habilidades" name="habilidades" placeholder="JavaScript, Python, Java, C++, etc" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+                    <textarea type="habilidades" id="habilidades" name="habilidades" placeholder="PHP, JavaScript, HTML5, CSS, Java e etc..." required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
                 </div>
 
                 <div class="mb-6">
@@ -102,7 +94,6 @@
                         <option value="B">Estou empregado mas busco novos desafios</option>
                         <option value="C">Não procuro emprego ativamente, mas estou aberto a avaliar novas
                             oportunidades</option>
-                        <option value="D">Não estou aberto a novas oportunidades</option>
                     </select>
                 </div>
 
@@ -131,21 +122,4 @@
         </div>
     </div>
 </body>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        var maxChecked = 3;
-
-        $('.career-checkbox').change(function() {
-            var checked = $('.career-checkbox:checked').length;
-
-            if (checked > maxChecked) {
-                $(this).prop('checked', false);
-            }
-        });
-    });
-</script>
-
-
 </html>

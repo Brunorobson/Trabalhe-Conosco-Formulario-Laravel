@@ -26,7 +26,6 @@ class TrabalheConoscoController extends Controller
         'A' => 'Busco oportunidades para iniciar o trabalho imediatamente',
         'B' => 'Estou empregado mas busco novos desafios',
         'C' => 'Não procuro emprego ativamente, mas estou aberto a avaliar novas oportunidades',
-        'D' => 'Não estou aberto a novas oportunidades',
     ];
 
     $regrasValidacao = [
