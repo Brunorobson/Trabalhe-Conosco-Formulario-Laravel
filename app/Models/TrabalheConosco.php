@@ -10,13 +10,13 @@ class TrabalheConosco extends Model
     use HasFactory;
     protected $table = 'trabalhe_conosco';
     protected $fillable = [
-        'nome_completo',
+        'nome',
         'email',
         'telefone',
-        'carreiras',
+        'carreira',
+        'disponibilidade',
+        'experiencia',
         'habilidades',
-        'momento_profissional',
-        'cidade_residencia',
         'sobre',
     ];
 }

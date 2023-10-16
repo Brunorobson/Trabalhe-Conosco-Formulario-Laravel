@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('trabalhe_conosco', function (Blueprint $table) {
             $table->id();
-            $table->string('nome_completo');
+            $table->string('nome');
             $table->string('email');
             $table->string('telefone');
-            $table->char('carreira', 2)->default('AA'); //QUAIS CARREIRAS VOCÊ ESTÁ BUSCANDO?
+            $table->json('carreira')->nullable();
             $table->text('habilidades');
-            $table->char('experiência')->default('A'); //QUAL A SUA EXPERIÊNCIA GERAL NA ÁREA TECH?
-            $table->char('momento_profissional', 2)->default('AA'); //COMO ESTA SEU MOMENTO PROFISSIONAL?
-            $table->string('cidade_residencia');
+            $table->char('disponibilidade')->default('A'); //QUAL A SUA EXPERIÊNCIA GERAL NA ÁREA TECH?
+            $table->string('experiencia', 255);
             $table->text('sobre');
             $table->timestamps();
         });

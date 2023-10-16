@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PDFController;
+use App\Http\Controllers\SendmailController;
 use App\Http\Controllers\TrabalheConoscoController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('trabalhe-conosco');
 });
 
 // Route::get('/', [TrabalheConoscoController::class, 'index'])->name('trabalhe.index');
-// Route::get('/', [TrabalheConoscoController::class, 'store'])->name('trabalhe.store');
+Route::post('/novo', [TrabalheConoscoController::class, 'store'])->name('trabalhe.store');
+
+Route::post('emails', [SendmailController::class, 'store'])->name('email.store');
+
