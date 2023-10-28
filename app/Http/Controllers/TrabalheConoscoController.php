@@ -12,7 +12,7 @@ class TrabalheConoscoController extends Controller
 {
     public function index()
     {
-        // Lógica para listar recursos
+        return view('trabalhe-conosco');
     }
 
     public function create()

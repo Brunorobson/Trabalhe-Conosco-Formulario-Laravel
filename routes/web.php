@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('trabalhe-conosco');
-});
+// Route::get('/', function () {
+//     return view('trabalhe-conosco');
+// });
 
-// Route::get('/', [TrabalheConoscoController::class, 'index'])->name('trabalhe.index');
+Route::get('/', [TrabalheConoscoController::class, 'index'])->name('trabalhe.index');
+
 Route::post('/novo', [TrabalheConoscoController::class, 'store'])->name('trabalhe.store');
 
